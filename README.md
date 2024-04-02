@@ -1,6 +1,6 @@
 ## 简介
 
-hp-admin-cli是一款能根据需求快速配置vue后台管理模板的脚手架，内置使用vue3 + vue-router + pinia + axios 其他功能均可自定义。
+bd-admin是一款能根据需求快速配置vue后台管理模板的脚手架，内置使用vue3 + vue-router + pinia + axios 其他功能均可自定义。
 
 - 极简操作，安装就可使用
 - 轻装上阵，模块功能自己决定是否使用，可以快速修改为自己想要的模板。
@@ -11,7 +11,7 @@ hp-admin-cli是一款能根据需求快速配置vue后台管理模板的脚手�
 ## 下载
 
 ```
-npm i hp-admin-cli -g
+npm i bd-admin -g
 ```
 
 ## 使用方法
