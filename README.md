@@ -40,10 +40,6 @@ admin-cli create <name>
 
 
 
-### 操作示例
-
-![image-20240402115039380](C:\Users\java\AppData\Roaming\Typora\typora-user-images\image-20240402115039380.png)
-
 ### 生成项目 目录结构
 
 ```
@@ -72,6 +68,3 @@ bd-admin
 └─ vue.config.js      # vue-cli 配置
 ```
 
-![image-20240402114639402](C:\Users\java\AppData\Roaming\Typora\typora-user-images\image-20240402114639402.png)
-
-![image-20240402114731744](C:\Users\java\AppData\Roaming\Typora\typora-user-images\image-20240402114731744.png)
