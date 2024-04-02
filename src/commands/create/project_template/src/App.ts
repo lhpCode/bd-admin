@@ -1,0 +1,5 @@
+//#end;
+return {
+  slot: {},
+  hook: {},
+};

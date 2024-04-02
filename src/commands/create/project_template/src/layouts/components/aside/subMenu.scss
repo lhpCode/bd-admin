@@ -1,0 +1,18 @@
+.el-menu-vertical-demo {
+  border: 0 !important;
+}
+//#hook_1
+
+//#end;
+return {
+  hook_1:{
+    element:function(){
+      return `:deep(.el-sub-menu__title) {
+        color: var(--them-menu-font-color) !important;
+      }`
+    },
+    antdv:function(){
+      return ``
+    }
+  }
+}

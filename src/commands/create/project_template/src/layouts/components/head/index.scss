@@ -1,0 +1,44 @@
+.header {
+  box-sizing: border-box;
+  overflow: hidden;
+  .head-left {
+    flex: 1;
+    .fold-icon {
+      width: 50px;
+      height: 50px;
+    }
+    a {
+      cursor: not-allowed;
+    }
+    .breadcrumb {
+      color: var(--them-head-font-color);
+    }
+  }
+  .head-right {
+    height: 100%;
+    .tooltip {
+      margin: 0 10px;
+      color: var(--them-head-font-color);
+    }
+    .user-right {
+      position: relative;
+      margin: 0 10px;
+      .user-name {
+        margin: 0 5px;
+        color: var(--them-head-font-color);
+      }
+      span {
+        margin: 0 5px;
+        color: #606266;
+      }
+      .user-hove {
+        position: absolute;
+        left: 0;
+        top: 10px;
+      }
+    }
+  }
+}
+//#end;
+return {
+}

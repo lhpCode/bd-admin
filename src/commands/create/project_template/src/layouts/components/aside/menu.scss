@@ -1,0 +1,41 @@
+//#hook_1
+//#end;
+return {
+  hook_1:{
+    element:function(){
+      return `.el-menu-vertical-demo {
+        width: 100%;
+        border: 0 !important;
+      }`
+    },
+    antdv:function(){
+      return `.a-menu {
+        :deep(.ant-menu-submenu-arrow) {
+          width: 0;
+        }
+      }
+      :deep(.ant-menu-submenu-selected) {
+        .ant-menu-submenu-title {
+          .ant-menu-title-content {
+            color: var(--them-menu-hove-color) !important;
+          }
+        }
+      }
+      :deep(.ant-menu-vertical) {
+        background-color: var(--them-menu-bg-color) !important;
+      }
+      :deep(.ant-menu-dark) {
+        background-color: var(--them-menu-hove-color) !important;
+      }
+      
+      .el-menu-vertical-demo {
+        width: 100%;
+        border: 0 !important;
+        background-color: var(--them-menu-bg-color) !important;
+        :deep(.ant-menu-inline) {
+          background-color: var(--them-menu-bg-color) !important;
+        }
+      }`
+    }
+  }
+}

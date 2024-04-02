@@ -1,0 +1,22 @@
+{
+  "project": {
+    "system": {
+      "router": {
+        "Home": "Home",
+        "OutLink": "Out Link",
+        "Three": "Three",
+        "Menu": "Menu",
+        "Button ": "Button",
+        "SystemManagement": "System management",
+        "MultiLevel": "Multi-level",
+        "SecondMenu": "Second menu",
+        "ThirdMenu": "Third Menu",
+        "FourthMenu": "Fourth Menu"
+      }
+    },
+    "login": {
+      "Login": "Login",
+      "PleaseEnterYourAccountNumber": "Please enter your account number"
+    }
+  }
+}

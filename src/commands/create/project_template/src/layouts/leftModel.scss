@@ -1,0 +1,23 @@
+.left-model {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--them-image-url);
+  overflow: hidden;
+}
+.aside {
+  height: 100vh;
+}
+.conter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  padding: 10px;
+  flex: 1;
+  box-sizing: border-box;
+}
+//#end;
+return {
+}

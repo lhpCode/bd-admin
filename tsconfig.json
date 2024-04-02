@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "sourceMap": false,
+    "noEmit": false,
+    "noEmitHelpers": false,
+    "importHelpers": false,
+    "strictNullChecks": false,
+    "allowUnreachableCode": true,
+    "lib": ["es6"],
+    "typeRoots": ["./node_modules/@types"],
+    "outDir": "./build", // 重定向输出目录
+    "rootDir": "./src", // 仅用来控制输出的目录结构
+    "allowJs": true, // 是否对js文件进行编译，默认：false。
+    "removeComments": false, // 是否移除注释，默认：false
+    // 配置@别名
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "noImplicitAny": false
+  },
+  "exclude": [
+    // 不参与打包的目录
+    "node_modules",
+    "build"
+  ],
+  "include": [
+    // 指定被编译文件所在的目录
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "**/*.d.ts"
+  ],
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
+  "compileOnSave": false,
+  "buildOnSave": false
+}

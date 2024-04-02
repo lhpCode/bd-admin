@@ -1,0 +1,52 @@
+{
+  "name": "bd-admin",
+  "version": "0.1.0",
+  "description": "一款能根据需求快速配置vue后台管理的脚手架",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "bd": "npm run build & npm run dev",
+    "dev": "npm link & npm run clear:test & npm run cli",
+    "build": " npm run clear:build  && tsc && node index.js",
+    "cli": "admin-cli-dev create test",
+    "clear:test": "rimraf test",
+    "clear:build": "rimraf build",
+    "file": "node index.js",
+    "prettier": "prettier --write ."
+  },
+  "bin": {
+    "admin-cli": "./index.js"
+  },
+  "keywords": ["vue", "admin", "自动构建", "后台管理", "脚手架", "多版本"],
+  "author": {
+    "name": "lhp",
+    "email": "1374487808@qq.com",
+    "url": "https://github.com/lhpCode/bd-admin"
+  },
+  "bugs": "https://github.com/lhpCode/bd-admin/issues",
+  "repository": "https://github.com/lhpCode/bd-admin",
+  "homepage": "https://github.com/lhpCode/bd-admin",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "ejs": "^3.1.9",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "execa": "^8.0.1",
+    "figlet": "^1.7.0",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.1",
+    "handlebars": "^4.7.8",
+    "inquirer": "^9.2.15",
+    "module-alias": "^2.2.3",
+    "ora": "^8.0.1",
+    "pacote": "^17.0.6"
+  }
+}
