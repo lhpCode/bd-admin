@@ -19,7 +19,7 @@ const styleIcon = {
 };
 
 const clickGoGithub = () => {
-  window.open("https://github.com/lili12352/hp-admin-cli");
+  window.open("https://github.com/lhpCode/bd-admin");
 };
 const dropLogin = () => {
   userInfoStore.dropLogin();
