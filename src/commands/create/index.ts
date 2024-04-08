@@ -32,6 +32,7 @@ const userQuestions = (projectName: string) => {
       modelCheckboxList.forEach((key) => {
         checkboxObj[key] = modelCheckbox.includes(key);
       });
+
       await createTemplates({ ...answers, ...checkboxObj, projectName });
 
       const child = spawn("npm", ["run", "prettier"]);
@@ -104,6 +105,7 @@ const projectCopy = async (
   answers,
 ) => {
   const { variant, eslint } = answers;
+
   const files = await fs.readdir(join(__dirname, templatePath), {
     withFileTypes: true,
   });
@@ -124,7 +126,18 @@ const projectCopy = async (
   };
 
   files.forEach((item: any) => {
-    const path = join(item.path, item.name);
+    //兼容低版本
+    const ItemPath = item.path
+      ? item.path
+      : join(
+          process.cwd(),
+          "build",
+          "commands",
+          "create",
+          "project_template_ts",
+        );
+
+    const path = join(ItemPath, item.name);
     const targetPath = join(
       process.cwd(),
       projectName,
