@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const nodeV = process.versions;
 const start = async () => {
   program.version(version); // 设置版本
   const fileList = await getFileList(join(__dirname, "commands"));
@@ -29,4 +30,14 @@ const start = async () => {
     program.parse();
   });
 };
-start();
+
+try {
+  const nodeVNUmber = nodeV.node.split(".").join("");
+  if (Number(nodeVNUmber) < 18120) {
+    console.log("node版本需>=18.12.0");
+  } else {
+    start();
+  }
+} catch (err) {
+  console.error("异常", err);
+}
