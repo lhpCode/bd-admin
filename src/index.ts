@@ -10,9 +10,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const nodeV = process.versions;
-const start = async (packageData) => {
-  console.log("当前版本", packageData.version);
-  program.version(packageData.version); // 设置版本
+const start = async () => {
+  console.log("当前版本", version);
+  program.version(version); // 设置版本
   const fileList = await getFileList(join(__dirname, "commands"));
   const filePromise = [];
   fileList.forEach((fileName) => {
@@ -34,15 +34,11 @@ const start = async (packageData) => {
 };
 
 try {
-  const nodeVNUmber = nodeV.node.split(".").join("");
-  if (Number(nodeVNUmber) < 18120) {
+  const [first, second] = nodeV.node.split(".");
+  if (Number(first) <= 18 || (Number(first) <= 18 && Number(second) <= 12)) {
     console.log("node版本需>=18.12.0");
   } else {
-    fs.readFile("./package.json", "utf-8").then((data) => {
-      const packageData = JSON.parse(data);
-      start(packageData);
-    });
-    // start();
+    start();
   }
 } catch (err) {
   console.error("异常", err);
