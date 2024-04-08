@@ -121,6 +121,10 @@ export class ConvertVue {
       html = removeI18(html);
     }
 
+    if (this.answers.css === "less") {
+      html = html.replace("scss", "less");
+    }
+
     return html;
   }
 

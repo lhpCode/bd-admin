@@ -27,27 +27,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers"`;
     plugins,
   };
 };
-const css = (type) => {
-  if (type === "scss") {
-    return `css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: "@import '@/styles/main.scss';"
-        }
-      }
-    },`;
-  } else {
-    let resolve = '@import "${resolve(__dirname, `./src/styles/main.less`)}";';
-    return `css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-        additionalData: ${"`" + resolve + "`"}
-      }
-    }
-  },`;
-  }
-};
+
 const eslint = (answers) => {
   const { eslint } = answers;
   if (!eslint)
@@ -85,7 +65,6 @@ export default defineConfig((configEnv)=>{
       }),
       ${ui(answers.ui).plugins}
     ],
-    ${css(answers.css)}
     resolve: {
       extensions: [
         ".mjs",

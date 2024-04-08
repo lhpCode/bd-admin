@@ -57,7 +57,7 @@ import "./style.css";
 import App from "./App.vue";
 import router from "@/router";
 import "@/router/protector";
-import "@/styles/index.scss";
+import "@/styles/index.${answers.css}";
 import { signSvgIcon } from "@/components/svgIcon/icon";
 import { hasPermission } from "@/utils/index";
 ${importPinia}

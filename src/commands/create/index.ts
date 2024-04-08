@@ -277,6 +277,16 @@ const isCopyFile = (answers, filePath: string) => {
   return flag;
 };
 
+// css文件处理
+const cssFile = (fileName, fromPath, toPath, answers) => {
+  const { css } = answers;
+  if (css === "less") {
+    fs.copyFile(fromPath, toPath.replace("scss", "less"));
+  } else {
+    fs.copyFile(fromPath, toPath);
+  }
+};
+
 const fileWrite = (path, files, projectName, templatePath, answers) => {
   const fileList = files.filter((dirent) => dirent.isFile());
   const vueFileNameList = fileList
@@ -294,9 +304,13 @@ const fileWrite = (path, files, projectName, templatePath, answers) => {
         filedir.split(templatePath)[1],
       );
       // 根据模块判断是否需要复制
-
       if (isCopyFile(answers, targetPath)) {
-        fs.copyFile(filedir, targetPath);
+        const [name, suffix] = dirent.name.split(".");
+        if (suffix === "scss") {
+          cssFile(dirent.name, filedir, targetPath, answers);
+        } else {
+          fs.copyFile(filedir, targetPath);
+        }
       }
     });
   } else {
@@ -328,7 +342,12 @@ const fileWrite = (path, files, projectName, templatePath, answers) => {
         // 其他文件复制
         // 根据模块判断是否需要复制
         if (isCopyFile(answers, targetPath)) {
-          fs.copyFile(filedir, targetPath);
+          const [name, suffix] = item.name.split(".");
+          if (suffix === "scss") {
+            cssFile(item.name, filedir, targetPath, answers);
+          } else {
+            fs.copyFile(filedir, targetPath);
+          }
         }
       }
     });
