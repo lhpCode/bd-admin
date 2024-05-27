@@ -36,7 +36,7 @@ const start = async () => {
 try {
   const [first, second] = nodeV.node.split(".");
   if (Number(first) <= 18 && Number(first) <= 18 && Number(second) <= 12) {
-    console.log("node版本需>=18.12.0");
+    console.log("node版本需>18.12.0");
   } else {
     start();
   }
