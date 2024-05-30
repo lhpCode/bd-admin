@@ -17,7 +17,7 @@ npm i bd-admin -g
 ## 使用方法
 
 ```
-admin-cli create <name>
+bd-admin create <name>
 ```
 
 ## 固定功能
